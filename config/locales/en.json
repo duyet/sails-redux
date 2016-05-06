@@ -1,4 +1,5 @@
 {
 	"Welcome": "Welcome",
-	"A brand new app.": "A brand new app."
+	"A brand new app.": "A brand new app.",
+	"Error.Passport.Password.Invalid": "Password Invalid"
 }
