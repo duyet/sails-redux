@@ -1,0 +1,32 @@
+{
+  "name": "medica-web",
+  "description": "Mediaca Talk",
+  "main": "app.js",
+  "authors": [
+    "Van-Duyet Le <me@duyetdev.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd",
+    "es6"
+  ],
+  "homepage": "http://duyetdev.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.0.2",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "jquery-timeago": "^1.5.2",
+    "requirejs": "^2.2.0",
+    "showdown": "^1.3.0",
+    "director": "^1.2.8",
+    "classnames": "^2.2.5",
+    "todomvc-common": "^1.0.2"
+  }
+}
