@@ -2,7 +2,7 @@ define(['react', './ToDoList', './ToDoForm'], function(React, ToDoList, ToDoForm
 
   var Header = React.createClass({
     getInitialState: function() {
-      return {todos: this.props.todos};
+      return {todos: this.props.todos || []};
     },
     render: () => {
       return (
@@ -13,7 +13,7 @@ define(['react', './ToDoList', './ToDoForm'], function(React, ToDoList, ToDoForm
         </div>
       );
     }
-  }); 
+  });
 
   return Header;
-}); 
+});

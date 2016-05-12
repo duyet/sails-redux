@@ -1,25 +1,36 @@
+// See: http://redux.js.org/docs/basics/Reducers.html
+
 define(['redux', './Actions'], function (Redux, Actions) {
-	const { SHOW_ALL } = Actions.VisibilityFilters;
-	function visibilityFilter(state = SHOW_ALL, action) {
+	const { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, TOGGLE_TODO, VisibilityFilters } = Actions
+	const { SHOW_ALL } = VisibilityFilters
+	const { combineReducers } = Redux
+
+	// const initialState = {
+	//   visibilityFilter: SHOW_ALL,
+	//   todos: []
+	// }
+
+	function visibilityFilter (state = SHOW_ALL, action) {
 	  switch (action.type) {
-	    case Actions.SET_VISIBILITY_FILTER:
+	    case SET_VISIBILITY_FILTER:
 	      return action.filter
 	    default:
 	      return state
 	  }
 	}
 
-	function todos(state = [], action) {
+	function todos (state = [], action) {
 	  switch (action.type) {
-	    case Actions.ADD_TODO:
+	    case ADD_TODO:
 	      return [
 	        ...state,
 	        {
+						id: action.id,
 	          text: action.text,
 	          completed: false
 	        }
 	      ]
-	    case Actions.COMPLETE_TODO:
+	    case COMPLETE_TODO:
 	      return state.map((todo, index) => {
 	        if (index === action.index) {
 	          return Object.assign({}, todo, {
@@ -28,6 +39,20 @@ define(['redux', './Actions'], function (Redux, Actions) {
 	        }
 	        return todo
 	      })
+
+				case TOGGLE_TODO:
+					console.log(action, 'Toggle')
+					if (state.id !== action.id) {
+						return state
+					}
+
+					return Object.assign({}, state, {
+						completed: !state.completed
+					})
+
+				case 'SET_VISIBILITY_FILTER':
+					return action.filter
+
 	    default:
 	      return state
 	  }
@@ -39,5 +64,4 @@ define(['redux', './Actions'], function (Redux, Actions) {
 	})
 
 	return todoApp
-
 })
