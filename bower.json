@@ -27,6 +27,8 @@
     "showdown": "^1.3.0",
     "director": "^1.2.8",
     "classnames": "^2.2.5",
-    "todomvc-common": "^1.0.2"
+    "todomvc-common": "^1.0.2",
+    "redux": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.5.2/redux.min.js",
+    "react-redux": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/4.4.5/react-redux.min.js"
   }
 }

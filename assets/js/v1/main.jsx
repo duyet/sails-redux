@@ -1,12 +1,14 @@
 requirejs.config({
     paths: {
       'react': '/bower_components/react/react-with-addons',
+      'redux': '/bower_components/redux/index',
       'reactdom': '/bower_components/react/react-dom',
       'jquery': '/bower_components/jquery/dist/jquery',
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',  
       'showdown': '/bower_components/showdown/compressed/Showdown',  
       'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
-      'app': '/js/v1'
+      'app': '/js/v1',
+      'lib': '/bower_components'
     },
 
     shim: {
@@ -14,32 +16,22 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'react', 'reactdom', 'app/core/Header'], 
-  function ($, React, ReactDOM, Header) {
+require(['jquery', 'react', 'reactdom', 'app/core/Header', 'app/Welcome/Main', 'app/Reducers'], 
+  function ($, React, ReactDOM, Header, WelcomeMain, Reducers) {
   $(function whenDomIsReady() {
 
+      ReactDOM.render(
+        <Header title="Sails + React" />,
+        document.getElementById('header')
+      );
 
       ReactDOM.render(
-        <Header title="MedicaTalk" />,
-        document.getElementById('header')
+        <WelcomeMain />,
+        document.getElementById('main')
       );
 
       // as soon as this file is loaded, connect automatically, 
       var socket = io.sails.connect();
-      
-      console.log('Connecting to Sails.js...');
-
-      // Subscribe to updates (a sails get or post will auto subscribe to updates)
-      socket.get('/comment', function (message) {
-        // console.log('Listening...' + message);
-
-        // // initialize the view with the data property
-        // ReactDOM.render(
-        //   <CommentList url='/comment' data={message} />,
-        //   document.getElementById('commentList')
-        // );
-
-      });
 
       // Expose connected `socket` instance globally so that it's easy
       // to experiment with from the browser console while prototyping.
