@@ -9,6 +9,12 @@ define(['react', 'react-redux', '../Actions'], function (React, ReactRedux, Acti
       <div>
         <input ref={node => {
           input = node
+        }} onKeyPress={(e) => {
+          console.log(e)
+          if (e.key === 'Enter') {
+            dispatch(addTodo(input.value))
+            input.value = ''
+          }
         }} />
         <button onClick={() => {
           dispatch(addTodo(input.value))
