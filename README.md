@@ -1,3 +1,5 @@
-# medica-web
+# Sails.js + Redux + React
+Node.js Application by Sails.js + Redux + React.
 
-a [Sails](http://sailsjs.org) application
+# License
+MIT
