@@ -2,6 +2,8 @@
 
 *(Ubuntu only)*
 
+![](http://sailsjs.org/images/bkgd_squiddy.png)
+
 1. Nodejs >= 5.x
 
 	See: https://nodejs.org/en/download/package-manager/
