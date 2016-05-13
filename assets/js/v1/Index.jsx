@@ -3,6 +3,8 @@ requirejs.config({
       'react': '/bower_components/react/react-with-addons',
       'redux': '/bower_components/redux/index',
       'react-redux': '/bower_components/react-redux/index',
+      'react-thunk': '/bower_components/redux-thunk/index',
+      'react-logger': '/bower_components/redux-logger/index',
       'reactdom': '/bower_components/react/react-dom',
       'jquery': '/bower_components/jquery/dist/jquery',
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',
@@ -17,44 +19,18 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'react', 'reactdom', 'redux', 'react-redux', 'app/Actions',
-  'app/core/Header', 'app/components/App', 'app/Reducers'],
-  function ($, React, ReactDOM, Redux, ReactRedux, Actions,
-    Header, App, Reducers) {
+require(['jquery', 'react', 'reactdom', 'react-redux', 'app/Stores', 'app/components/core/Header', 'app/components/App'],
+  function ($, React, ReactDOM, ReactRedux, Stores, Header, App) {
   $(function whenDomIsReady () {
-      const { createStore } = Redux
       const { Provider } = ReactRedux
-
-      const SailApp = Reducers
-      const { addTodo, completeTodo } = Actions
-
-
-      const store = createStore(SailApp)
-      let unsubscribe = store.subscribe(() =>
-        console.log(">>> " + store.getState())
-      )
-
-      console.log(store.getState())
-      store.dispatch(addTodo('Learn about actions'))
-      console.log(store.getState())
-
-      // Dispatch some actions
-      store.dispatch(addTodo('Learn about actions'))
-      store.dispatch(addTodo('Learn about reducers'))
-      store.dispatch(addTodo('Learn about store'))
-      store.dispatch(completeTodo(0))
-      store.dispatch(completeTodo(1))
-
-      // Stop listening to state updates
-      unsubscribe()
-
+      
       ReactDOM.render(
         <Header title='Sails + React' />,
         document.getElementById('header')
       )
 
       ReactDOM.render(
-        <Provider store={store}>
+        <Provider store={Stores}>
           <App />
         </Provider>,
         document.getElementById('main')
@@ -66,6 +42,5 @@ require(['jquery', 'react', 'reactdom', 'redux', 'react-redux', 'app/Actions',
       // Expose connected `socket` instance globally so that it's easy
       // to experiment with from the browser console while prototyping.
       // window.socket = socket;
-
   });
 });

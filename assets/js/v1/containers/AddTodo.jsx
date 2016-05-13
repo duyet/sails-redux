@@ -10,7 +10,6 @@ define(['react', 'react-redux', '../Actions'], function (React, ReactRedux, Acti
         <input ref={node => {
           input = node
         }} onKeyPress={(e) => {
-          console.log(e)
           if (e.key === 'Enter') {
             dispatch(addTodo(input.value))
             input.value = ''
@@ -25,6 +24,7 @@ define(['react', 'react-redux', '../Actions'], function (React, ReactRedux, Acti
       </div>
     )
   }
+  
   AddTodo = connect()(AddTodo)
 
   return AddTodo

@@ -4,18 +4,22 @@ define(['react-redux', '../Actions', '../components/TodoList'], function(ReactRe
 
   const getVisibleTodos = (todos, filter) => {
   switch (filter) {
-      case Actions.VisibilityFilters.SHOW_ALL:
+      case 'SHOW_ALL':
         return todos
-      case Actions.VisibilityFilters.SHOW_COMPLETED:
+      case 'SHOW_COMPLETED':
+        console.log('todos.filter', todos, filter)
         return todos.filter(t => t.completed)
-      case Actions.VisibilityFilters.SHOW_ACTIVE:
+      case 'SHOW_ACTIVE':
+        console.log('todos.filter', todos, filter)
         return todos.filter(t => !t.completed)
+      default:
+        return []
     }
   }
 
   const mapStateToProps = (state) => {
     return {
-      todos: getVisibleTodos(state.todos, state.visibilityFilter)
+      todos: getVisibleTodos(state.todos, state.visibilityFilters)
     }
   }
 

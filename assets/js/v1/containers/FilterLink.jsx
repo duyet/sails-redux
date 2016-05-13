@@ -3,15 +3,16 @@ define(['react-redux', '../Actions', '../components/Link'], function(ReactRedux,
   const { setVisibilityFilter } = Actions
 
   const mapStateToProps = (state, ownProps) => {
+    console.log('Link state ', state)
     return {
-      active: ownProps.filter === state.visibilityFilter
+      active: ownProps.filter === state.visibilityFilters
     }
   }
 
   const mapDispatchToProps = (dispath, ownProps) => {
     return {
       onClick: () => {
-        dispatch(setVisibilityFilter(ownProps.filter))
+        dispath(setVisibilityFilter(ownProps.filter))
       }
     }
   }

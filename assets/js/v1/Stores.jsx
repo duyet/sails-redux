@@ -8,29 +8,24 @@
 
 // See: http://redux.js.org/docs/basics/Store.html
 
-define(['redux', './Reducers', './Actions'], function (Redux, Reducers, Actions) {
-  const { createStore } = Redux
-  const { todoApp } = Reducers
-  const { addTodo, completeTodo, setVisibilityFilter, VisibilityFilters } = Actions
+define(['redux', 'react-thunk', 'react-logger', './reducers/Index', './Actions' ],
+function (Redux, thunkMiddleware, loggerMiddleware, Reducers, Actions) {
+  const { createStore, applyMiddleware } = Redux
+  // const initialState = []
 
-  let store = createStore(todoApp)
+  let store = createStore(
+    Reducers,
+    { type: 'SHOW_ALL', todos: [] }
+  )
+
+  store.dispatch(Actions.addTodo('Learn about actions'))
+  store.dispatch(Actions.addTodo('Learn about actions'))
 
   console.log(store.getState())
 
-  // Every time the state changes, log it
-  // Note that subscribe() returns a function for unregistering the listener
   let unsubscribe = store.subscribe(() =>
     console.log(store.getState())
   )
 
-  // Dispatch some actions
-  store.dispatch(addTodo('Learn about actions'))
-  store.dispatch(addTodo('Learn about reducers'))
-  store.dispatch(addTodo('Learn about store'))
-  store.dispatch(completeTodo(0))
-  store.dispatch(completeTodo(1))
-  store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
-
-  // Stop listening to state updates
-  unsubscribe()
+  return store
 })
