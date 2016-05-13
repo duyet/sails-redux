@@ -1,10 +1,10 @@
 
-define(['redux', './Todos', './VisibilityFilters'], function (Redux, todos, visibilityFilters) {
+define(['redux', './Todos', './VisibilityFilters'], function (Redux, Todos, VisibilityFilters) {
   const { combineReducers } = Redux
 
   const Reducers = combineReducers({
-    todos,
-    visibilityFilters
+    Todos,
+    VisibilityFilters
   })
 
   return Reducers

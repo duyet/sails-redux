@@ -26,6 +26,7 @@ define(['react-redux', '../Actions', '../components/TodoList'], function(ReactRe
   const mapDispatchToProps = (dispatch) => {
     return {
       onTodoClick: (id) => {
+        console.log("click toggle", toggleTodo(id))
         dispatch(toggleTodo(id))
       }
     }
