@@ -8,7 +8,7 @@
 
 // See: http://redux.js.org/docs/basics/Store.html
 
-define(['redux', 'react-thunk', 'react-logger', './reducers/Index', './Actions' ],
+define(['redux', 'redux-thunk', 'redux-logger', './reducers/Index', './Actions' ],
 function (Redux, thunkMiddleware, loggerMiddleware, Reducers, Actions) {
   const { createStore, applyMiddleware } = Redux
   // const initialState = []

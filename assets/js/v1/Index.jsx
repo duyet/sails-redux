@@ -3,8 +3,9 @@ requirejs.config({
       'react': '/bower_components/react/react-with-addons',
       'redux': '/bower_components/redux/index',
       'react-redux': '/bower_components/react-redux/index',
-      'react-thunk': '/bower_components/redux-thunk/index',
-      'react-logger': '/bower_components/redux-logger/index',
+      'redux-thunk': '/bower_components/redux-thunk/index',
+      'redux-logger': '/bower_components/redux-logger/index',
+      'react-router': '/bower_components/react-router/index',
       'reactdom': '/bower_components/react/react-dom',
       'jquery': '/bower_components/jquery/dist/jquery',
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',
@@ -19,19 +20,17 @@ requirejs.config({
     }
 });
 
-require(['jquery', 'react', 'reactdom', 'react-redux', 'app/Stores', 'app/components/core/Header', 'app/components/App'],
-  function ($, React, ReactDOM, ReactRedux, Stores, Header, App) {
+require(['jquery', 'react', 'reactdom', 'react-redux', 'react-router', 'app/Stores', 'app/components/App'],
+  function ($, React, ReactDOM, ReactRedux, ReactRouter, Stores, App) {
   $(function whenDomIsReady () {
       const { Provider } = ReactRedux
-      
-      ReactDOM.render(
-        <Header title='Sails + React' />,
-        document.getElementById('header')
-      )
+      const { Router, Route } = ReactRouter
 
       ReactDOM.render(
         <Provider store={Stores}>
-          <App />
+          <Router>
+            <Route path='*' component={App} />
+          </Router>
         </Provider>,
         document.getElementById('main')
       )
