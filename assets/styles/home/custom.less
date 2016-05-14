@@ -105,8 +105,19 @@ body {
   display: block;
 }
 .content-page {
+  &:extend(.container);
+
   margin-top: 70px;
   min-height: 100%;
+  padding-top: 40px;
+}
+
+.navbar-brand {
+    color: #222;
+    font-size: 30px;
+    line-height: 34px;
+    text-rendering: optimizeSpeed;
+    font-variant: small-caps;
 }
 
 .medica-footer {

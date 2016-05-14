@@ -1,12 +1,13 @@
 requirejs.config({
     paths: {
-      'react': '/bower_components/react/react-with-addons',
+      'react': '/bower_components/react/react-with-addons.min',
       'redux': '/bower_components/redux/index',
       'react-redux': '/bower_components/react-redux/index',
       'redux-thunk': '/bower_components/redux-thunk/index',
       'redux-logger': '/bower_components/redux-logger/index',
       'react-router': '/bower_components/react-router/index',
-      'reactdom': '/bower_components/react/react-dom',
+      'redux-api': '/bower_components/redux-api/dist/redux-api.min',
+      'reactdom': '/bower_components/react/react-dom.min',
       'jquery': '/bower_components/jquery/dist/jquery',
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',
       'showdown': '/bower_components/showdown/compressed/Showdown',
@@ -16,30 +17,42 @@ requirejs.config({
     },
 
     shim: {
-      'jquery.timeago': ['jquery']
+      'jquery.timeago': ['jquery'],
+      'bootstrap': ['jquery']
     }
-});
+})
 
-require(['jquery', 'react', 'reactdom', 'react-redux', 'react-router', 'app/Stores', 'app/components/App'],
-  function ($, React, ReactDOM, ReactRedux, ReactRouter, Stores, App) {
-  $(function whenDomIsReady () {
-      const { Provider } = ReactRedux
-      const { Router, Route } = ReactRouter
+require(['react', 'reactdom', 'react-redux', 'react-router', 'app/Stores', 'app/components/App'],
+  function (React, ReactDOM, ReactRedux, ReactRouter, Stores, App) {
+    const { Provider } = ReactRedux
+    const { Router, Route } = ReactRouter
 
-      ReactDOM.render(
-        <Provider store={Stores}>
-          <Router>
-            <Route path='*' component={App} />
-          </Router>
-        </Provider>,
-        document.getElementById('main')
-      )
+    ReactDOM.render(
+      <Provider store={Stores}>
+        <Router>
+          <Route path='*' component={App} />
+        </Router>
+      </Provider>,
+      document.getElementById('main')
+    )
 
-      // as soon as this file is loaded, connect automatically,
-      // var socket = io.sails.connect();
+    // as soon as this file is loaded, connect automatically,
+    // var socket = io.sails.connect();
 
-      // Expose connected `socket` instance globally so that it's easy
-      // to experiment with from the browser console while prototyping.
-      // window.socket = socket;
-  });
-});
+    // Expose connected `socket` instance globally so that it's easy
+    // to experiment with from the browser console while prototyping.
+    // window.socket = socket;
+})
+
+require.onError = function (err) {
+    let message = 'Something went wrong!'
+    if (err.requireType === 'timeout') {
+       message = 'Loading timeout, please refresh your webpage.'
+    }
+
+    let messageBlock = document.createElement('div')
+    messageBlock.innerHTML = `<div style="height: 35px;text-align:center;position: fixed;top: 0;left: 0;right: 0;background: #ff9300;width: auto;color: #fff;line-height: 35px;">${message}</div>`
+
+    document.body.appendChild(messageBlock)
+    throw err
+};
