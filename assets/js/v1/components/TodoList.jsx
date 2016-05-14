@@ -2,7 +2,6 @@ define(['react', './Todo'], function (React, Todo) {
   const { PropTypes } = React
 
   const TodoList = ({ todos, onTodoClick }) => (
-    <h1>Main App</h1>
     <ul>
       {todos.map(todo =>
         <Todo
