@@ -11,7 +11,7 @@ define(['react'], function (React) {
             <span className='icon-bar' />
           </button>
           <a className='navbar-brand' href='#'>
-            ...
+            m
           </a>
         </div>{/*Navbar header End*/}
         <nav className='collapse navbar-collapse navigation' id='bs-example-navbar-collapse-1' role='navigation'>

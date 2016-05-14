@@ -6,13 +6,16 @@ define(['react', '../containers/FilterLink'], function (React, FilterLink) {
       <div className="container">
         <ul className="footer-links">
           <li>
-            <a href="https://github.com/twbs/bootstrap">GitHub</a>
+            <a href="#">Terms</a>  
           </li>
           <li>
-            <a href="https://twitter.com/getbootstrap">Twitter</a>
+            <a href="#">Privacy</a>
           </li>
           <li>
-            <a href="../getting-started/#examples">Examples</a>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
           </li>
         </ul>
         <p>(c) 2016</p>
