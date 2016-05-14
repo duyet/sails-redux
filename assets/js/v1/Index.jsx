@@ -22,13 +22,13 @@ requirejs.config({
     }
 })
 
-require(['react', 'reactdom', 'react-redux', 'react-router', 'app/Stores', 'app/components/App'],
-  function (React, ReactDOM, ReactRedux, ReactRouter, Stores, App) {
+require(['react', 'reactdom', 'react-redux', 'react-router', 'app/Store', 'app/components/App'],
+  function (React, ReactDOM, ReactRedux, ReactRouter, Store, App) {
     const { Provider } = ReactRedux
     const { Router, Route } = ReactRouter
 
     ReactDOM.render(
-      <Provider store={Stores}>
+      <Provider store={Store}>
         <Router>
           <Route path='*' component={App} />
         </Router>

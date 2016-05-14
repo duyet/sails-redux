@@ -1,9 +1,9 @@
-define(['react', 'app/Rest'], function(React, Rest) {
+define(['react', 'app/Rest', 'app/Store'], function(React, Rest, Store) {
   const { PropTypes, Component } = React
 
   class Home extends Component {
     componentDidMount() {
-      const categogry = this.props.fetchCategory
+
     }
 
     render() {
