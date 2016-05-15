@@ -20,12 +20,12 @@ function (
   Topics,
   VisibleTodoList
 ) {
-  const { Router, Route } = ReactRouter
+  const { Router, Route, browserHistory } = ReactRouter
   const App = () => (
     <div className='wrapper-page'>
       <Header />
 
-      <Router>
+      <Router history={browserHistory}>
         <Route path='/' component={Home} />
         <Route path='/explore' component={Explore} />
         <Route path='/topics' component={Topics} />

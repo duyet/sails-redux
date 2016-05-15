@@ -12,7 +12,7 @@ requirejs.config({
       'jquery.timeago': '/bower_components/jquery-timeago/jquery.timeago',
       'showdown': '/bower_components/showdown/compressed/Showdown',
       'bootstrap': '/bower_components/bootstrap/dist/js/bootstrap',
-      'app': '/js/v1',
+      'app': '/js',
       'lib': '/bower_components'
     },
 
@@ -25,11 +25,11 @@ requirejs.config({
 require(['react', 'reactdom', 'react-redux', 'react-router', 'app/Store', 'app/components/App'],
   function (React, ReactDOM, ReactRedux, ReactRouter, Store, App) {
     const { Provider } = ReactRedux
-    const { Router, Route } = ReactRouter
+    const { Router, Route, browserHistory } = ReactRouter
 
     ReactDOM.render(
       <Provider store={Store}>
-        <Router>
+        <Router history={browserHistory}>
           <Route path='*' component={App} />
         </Router>
       </Provider>,
