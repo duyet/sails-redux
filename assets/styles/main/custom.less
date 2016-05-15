@@ -1,3 +1,5 @@
+@import './footer.less';
+
 html,
 body {
   text-align: left;
@@ -105,29 +107,17 @@ body {
   display: block;
 }
 .content-page {
+  &:extend(.container);
+
   margin-top: 70px;
   min-height: 100%;
+  padding-top: 40px;
 }
 
-.medica-footer {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 100px;
-    color: #99979c;
-    text-align: center;
-    background-color: #2a2730;
-
-    .footer-links {
-      padding-left: 0;
-      margin-bottom: 20px;
-
-      li {
-        display: inline-block;
-        margin-right: 10px;
-
-        a {
-          color: #fff;
-        }
-      }
-    }
+.navbar-brand {
+    color: #222;
+    font-size: 30px;
+    line-height: 15px;
+    text-rendering: optimizeSpeed;
+    font-variant: small-caps;
 }

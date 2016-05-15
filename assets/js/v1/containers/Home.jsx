@@ -1,4 +1,4 @@
-define(['react-redux', '../Actions', '../components/Home/Index'], function(ReactRedux, Actions, Home) {
+define(['react-redux', 'app/Rest', 'app/Actions', 'app/components/Home/Index'], function(ReactRedux, Rest, Actions, Home) {
   const { connect } = ReactRedux
   const { setVisibilityFilter } = Actions
 
@@ -8,16 +8,18 @@ define(['react-redux', '../Actions', '../components/Home/Index'], function(React
     }
   }
 
-  const mapDispatchToProps = (dispath, ownProps) => {
+  const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-
+      fetchCategory: () => {
+        dispatch(Rest.actions.category.sync());
+      }
     }
   }
 
-  const HeaderContainer = connect(
+  const HomeContainer = connect(
     mapStateToProps,
     mapDispatchToProps
   )(Home)
 
-  return HeaderContainer
+  return HomeContainer
 })

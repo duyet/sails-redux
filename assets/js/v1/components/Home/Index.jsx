@@ -1,12 +1,26 @@
-define(['react', '../../Actions'], function (React, Actions) {
-  var { PropTypes } = React
+define(['react', 'app/Rest', 'app/Store', './Banner', './BlockQuotes', './Sitemap'], 
+function(React, Rest, Store, Banner, BlockQuotes, Sitemap) {
+  const { PropTypes, Component } = React
 
-  const Home = () => (
-    
-  )
+  class Home extends Component {
+    componentDidMount() {
 
-  Home.propTypes = {
-    
+    }
+
+    render() {
+      return (
+        <div className='home'>
+          <Banner />
+
+          <div className='container'>
+            <BlockQuotes />
+            <Sitemap />
+          </div>
+          
+        </div>
+
+      );
+    }
   }
 
   return Home

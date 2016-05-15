@@ -1,4 +1,4 @@
-define(['react'], function (React) {
+define(['react', './Navbar'], function (React, Navbar) {
   const Header = (prop) => (
     <header id='section_header' className='navbar-fixed-top main-nav' role='banner'>
       <div className='container'>
@@ -13,15 +13,8 @@ define(['react'], function (React) {
           <a className='navbar-brand' href='#'>
             m
           </a>
-        </div>{/*Navbar header End*/}
-        <nav className='collapse navbar-collapse navigation' id='bs-example-navbar-collapse-1' role='navigation'>
-          <ul className='nav navbar-nav navbar-right '>
-            <li className='active'><a href='#'>Home </a></li>
-            <li><a href='#explore'>Explore</a> </li>
-            <li><a href='#help'>Help</a> </li>
-            <li><a href='#about'>About </a> </li>
-          </ul>
-        </nav>
+        </div>
+        <Navbar />
       </div>{/* /.container-fluid */}
     </header>
   )
