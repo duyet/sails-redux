@@ -3,9 +3,9 @@ define(['react'], function(React) {
 
   const Content = ({ active, children }) => {
     return (
-    	<div className='wrap'>
-			<h1>Explore</h1>
-		</div>
+      <div className='container wrap'>
+        <h1>Explore</h1>
+      </div>
     )
   }
 
