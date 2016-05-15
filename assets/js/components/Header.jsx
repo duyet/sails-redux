@@ -1,6 +1,6 @@
 define(['react', 'react-router', './Navbar'], function (React, ReactRouter, Navbar) {
   const { Link } = ReactRouter
-  
+
   const Header = (prop) => (
     <header id='section_header' className='navbar-fixed-top main-nav' role='banner'>
       <div className='container'>
@@ -13,7 +13,7 @@ define(['react', 'react-router', './Navbar'], function (React, ReactRouter, Navb
             <span className='icon-bar' />
           </button>
           <Link className='navbar-brand' to='/'>
-            m
+            {prop.logoText}
           </Link>
         </div>
         <Navbar />

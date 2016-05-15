@@ -12,6 +12,7 @@ requirejs.config({
       'jquery.timeago': '../bower_components/jquery-timeago/jquery.timeago',
       'showdown': '../bower_components/showdown/compressed/Showdown',
       'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
+      
       'app': '/js',
       'lib': '../bower_components'
     },
@@ -19,7 +20,9 @@ requirejs.config({
     shim: {
       'jquery.timeago': ['jquery'],
       'bootstrap': ['jquery']
-    }
+    },
+
+    baseUrl: '/js'
 })
 
 require(['react', 'reactdom', 'react-redux', 'react-router', './Store', './components/App'],
@@ -54,7 +57,7 @@ require.onError = function (err) {
     messageBlock.innerHTML = `<div style="height: 48px;text-align:center;position: fixed;top: 0;left: 0;right: 0;background: #ff9300;width: auto;color: #fff;line-height: 48px;">${message}</div>`
 
     document.body.appendChild(messageBlock)
-    document.getElementsByClassName('loading').innerHTML = ''
+    document.getElementsByClassName('loading')[0].innerHTML = ''
 
     throw err
 };

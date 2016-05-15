@@ -4,7 +4,8 @@ define(['react-redux', '../Actions', '../components/Header'], function(ReactRedu
 
   const mapStateToProps = (state, ownProps) => {
     return {
-      title: 'Medica Talk'
+      title: 'Medica Talk',
+      logoText: '[m]',
     }
   }
 
