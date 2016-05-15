@@ -1,4 +1,4 @@
-define(['react', 'app/Rest', 'app/Store', './Banner', './BlockQuotes', './Sitemap'], 
+define(['react', '../../Rest', '../../Store', './Banner', './BlockQuotes', './Sitemap'], 
 function(React, Rest, Store, Banner, BlockQuotes, Sitemap) {
   const { PropTypes, Component } = React
 

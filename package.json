@@ -43,5 +43,8 @@
     "url": "git://github.com/duyetdev/medica-web.git"
   },
   "author": "duyetdev",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "grunt-contrib-requirejs": "^1.0.0"
+  }
 }
