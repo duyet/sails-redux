@@ -1,14 +1,18 @@
-define(['react-redux', '../Actions', '../components/Auth/Index'], function(ReactRedux, Actions, Auth) {
+define(['redux', 'react-redux', '../Actions', '../components/Auth/Index'], 
+function(Redux, ReactRedux, Actions, Auth) {
   const { connect } = ReactRedux
+  const { bindActionCreators } = Redux
+
   const mapStateToProps = (state, ownProps) => {
     return {
-
+      isAuthenticating   : state.auth.isAuthenticating,
+      statusText         : state.auth.statusText
     }
   }
 
-  const mapDispatchToProps = (dispath, ownProps) => {
+  const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-
+      actions : bindActionCreators(Actions, dispatch)
     }
   }
 

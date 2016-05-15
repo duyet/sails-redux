@@ -33,6 +33,7 @@
     "redux-thunk": "https://npmcdn.com/redux-thunk@2.0.1/dist/redux-thunk.min.js",
     "redux-logger": "https://npmcdn.com/redux-logger@2.6.0/dist/index.js",
     "react-router": "https://npmcdn.com/react-router/umd/ReactRouter.min.js",
-    "redux-api": "^0.9.6"
+    "redux-api": "^0.9.6",
+    "jwt-decode": "^2.0.1"
   }
 }

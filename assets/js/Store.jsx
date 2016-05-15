@@ -23,16 +23,15 @@ function (Redux, thunkMiddleware, loggerMiddleware, Rest, Reducers, Actions) {
   }
 
   const logger = loggerMiddleware()
+  const initState = {
+    auth: { isAuthenticated: false }
+  };
 
   let store = createStore(
     combineReducers(Reducers, Rest.reducers),
+    initState,
     applyMiddleware(logger, thunkMiddleware.default, crashReporter)
   )
-
-  store.dispatch({
-    type: 'ADD_TODO',
-    text: 'Understand the middleware'
-  })
 
   // let unsubscribe = store.subscribe(() =>
   //   console.log(store.getState())

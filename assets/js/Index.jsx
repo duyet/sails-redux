@@ -12,6 +12,7 @@ requirejs.config({
       'jquery.timeago': '../bower_components/jquery-timeago/jquery.timeago',
       'showdown': '../bower_components/showdown/compressed/Showdown',
       'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
+      'jwt-decode': '../bower_components/jwt-decode/build/jwt-decode.min',
       
       'app': '/js',
       'lib': '../bower_components'
@@ -25,10 +26,16 @@ requirejs.config({
     baseUrl: '/js'
 })
 
-require(['react', 'reactdom', 'react-redux', 'react-router', './Store', './components/App'],
-  function (React, ReactDOM, ReactRedux, ReactRouter, Store, App) {
+require(['react', 'reactdom', 'react-redux', 'react-router', './Store', './Actions', './components/App'],
+  function (React, ReactDOM, ReactRedux, ReactRouter, Store, Actions, App) {
     const { Provider } = ReactRedux
     const { Router, Route, browserHistory } = ReactRouter
+    const { TOKEN_KEY, loginUserSuccess } = Actions
+
+    let token = localStorage.getItem(TOKEN_KEY);
+    if (token !== null) {
+      store.dispatch(loginUserSuccess(token));
+    }
 
     ReactDOM.render(
       <Provider store={Store}>

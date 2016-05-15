@@ -4,7 +4,7 @@ define(['react', 'react-router', './Navbar'], function (React, ReactRouter, Navb
   const Header = (prop) => (
     <header id='section_header' className='navbar-fixed-top main-nav' role='banner'>
       <div className='container'>
-        {/* <div class='row'> */}
+
         <div className='navbar-header '>
           <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
             <span className='sr-only'>Toggle navigation</span>
@@ -16,8 +16,8 @@ define(['react', 'react-router', './Navbar'], function (React, ReactRouter, Navb
             {prop.logoText}
           </Link>
         </div>
-        <Navbar />
-      </div>{/* /.container-fluid */}
+        <Navbar {...prop} />
+      </div>
     </header>
   )
 
