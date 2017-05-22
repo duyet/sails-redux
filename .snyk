@@ -1,0 +1,78 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.7.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:ms:20170412':
+    - sails > @sailshq/express > @sailshq/connect > compression > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > serve-favicon > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > skipper > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > skipper > skipper-disk > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-adapter > socket.io-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-client > socket.io-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > compression > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > connect > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > connect > finalhandler > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > send > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > express-session > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > grunt-contrib-watch > tiny-lr > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > method-override > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > serve-static > send > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > @sailshq/body-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > serve-static > send > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > connect-timeout > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > express-session > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > finalhandler > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > morgan > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > serve-index > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > grunt-contrib-watch > tiny-lr > body-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > serve-static > send > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > connect-timeout > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > send > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > serve-static > send > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > @sailshq/express > @sailshq/connect > serve-favicon > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > engine.io > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-adapter > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-client > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > sails-hook-sockets > socket.io > socket.io-client > engine.io-client > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
+    - sails > skipper > body-parser > debug > ms:
+        patched: '2017-05-22T23:38:17.387Z'
