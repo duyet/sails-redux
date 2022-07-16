@@ -21,7 +21,7 @@
     "grunt-contrib-uglify": "0.11.1",
     "grunt-contrib-watch": "1.1.0",
     "grunt-sails-linker": "0.10.1",
-    "grunt-sync": "0.6.2",
+    "grunt-sync": "0.8.2",
     "include-all": "0.1.6",
     "passport": "0.6.0",
     "passport-http-bearer": "1.0.1",
