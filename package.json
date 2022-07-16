@@ -23,7 +23,7 @@
     "grunt-sails-linker": "~0.10.1",
     "grunt-sync": "0.6.2",
     "include-all": "~0.1.6",
-    "passport": "^0.3.2",
+    "passport": "^0.6.0",
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4",
